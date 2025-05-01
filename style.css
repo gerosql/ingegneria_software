@@ -2,29 +2,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
-}
-body {
   background-image: url("images/background.jpg");
   background-repeat: repeat-y;
   background-position: left center, right center;
   background-size: auto 150%;
   background-attachment: fixed;
   background-color: white;
-  padding: 0;
-  margin: 0;
+  color: #333;
 }
-
-main {
-  max-width: 970px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-}
-
-
 
 header {
   background-color: #004080;
@@ -34,7 +19,7 @@ header {
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -60,9 +45,9 @@ nav ul li a:hover {
 }
 
 main {
+  max-width: 960px;
+  margin: 0 auto;
   padding: 2em;
-  max-width: 900px;
-  margin: auto;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -87,7 +72,7 @@ footer {
   color: white;
   text-align: center;
   padding: 1em;
-  margin-top: 0; 
+  margin-top: 0;
 }
 
 .hamburger-menu {
@@ -142,6 +127,7 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+
 @media (max-width: 768px) {
   main {
     padding: 1em;
