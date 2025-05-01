@@ -56,7 +56,7 @@
         <li>Test di accettazione</li>
         <li>Test dell'usabilità per assicurare che il software sia utile e intuitivo per gli utenti</li>
       </ul>
-      <img src="images/validazione.gif" alt="Processo di Validazione" >
+      <img src="images/validazione.gif" alt="Processo di Validazione">
     </section>
 
     <section>
@@ -67,7 +67,40 @@
         <li>Test di sistema</li>
         <li>Test di accettazione</li>
       </ul>
-      <img src="images/verifica_validazione.jpg" alt="Verifica e validazione" >
+      <img src="images/verifica_validazione.jpg" alt="Verifica e validazione">
+    </section>
+
+    <section>
+      <h2>3. Esempio di Analisi di Flusso dei Dati</h2>
+      <p>Nel seguente esempio, analizziamo il comportamento delle variabili all'interno della funzione <code>swap()</code> e come vengono definite (D), usate (U) o assegnate (A).</p>
+
+      <pre>
+void swap(int *x, int *y) {{
+  int z;        // (1)
+  *y = z;       // (2)
+  *y = *x;      // (3)
+  *x = z;       // (4)
+}}
+      </pre>
+
+      <h3>Analisi delle variabili:</h3>
+      <ul>
+        <li><strong>x</strong>:<br>
+          - D → passaggio parametro<br>
+          - U → (3)<br>
+          - D → (4)
+        </li>
+        <li><strong>y</strong>:<br>
+          - D → passaggio parametro<br>
+          - D → (2)<br>
+          - D → (3)
+        </li>
+        <li><strong>z</strong>:<br>
+          - A → (1)<br>
+          - U → (2)<br>
+          - U → (4)
+        </li>
+      </ul>
     </section>
   </main>
 
