@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -26,18 +26,43 @@
     </nav>
   </header>
   <main>
-    <h2>Introduzione</h2>
-    <p>Le Reti di Petri sono modelli matematici usati per rappresentare sistemi concorrenti, distribuiti o asincroni. Sono utili per l'analisi della sincronizzazione, comunicazione e concorrenza nei sistemi.</p>
+    <h2>Che cosa sono le Reti di Petri?</h2>
+    <p>Le reti di Petri sono un modello di <strong>sistemi a eventi discreti</strong>. Sono usate per rappresentare gli eventi di un sistema secondo l'ordine in cui si presentano. Per questa ragione sono anche dette <strong>reti posto/transizione</strong> o <strong>P/T</strong>.</p>
+    
+    <h3>Perché si chiamano Reti di Petri?</h3>
+    <p>Prendono il nome del loro autore: sono state ideate dal ricercatore tedesco <strong>Karl Adam Petri</strong> negli anni '60.</p>
 
-    <h2>Componenti di una Rete di Petri</h2>
+    <h2>Struttura delle Reti P/T</h2>
+    <p>Una rete di Petri del tipo posto/transizione (P/T) è composta da due insiemi e due matrici.</p>
     <ul>
-      <li><strong>Posti</strong>: rappresentano condizioni o stati</li>
-      <li><strong>Transizioni</strong>: eventi che possono cambiare lo stato</li>
-      <li><strong>Token</strong>: segnali che viaggiano tra posti e transizioni</li>
-      <li><strong>Archi</strong>: collegamenti tra posti e transizioni</li>
+      <li>I <strong>posti</strong> (p) sono rappresentati da cerchi. Formalmente l'insieme dei posti è indicato con la lettera <code>P = {p1, p2, p3, ...}</code></li>
+      <li>Le <strong>transizioni</strong> (t) sono rappresentate da barre o rettangoli. L'insieme delle transizioni è indicato con <code>T = {t1, t2, t3, ...}</code></li>
     </ul>
 
-    <img src="images/reti_petri.jpg" alt="Schema di una rete di Petri">
+    <img src="images/rete_petri_struttura.png" alt="Rete di Petri struttura P/T" style="max-width:100%;">
+
+    <p>La rappresentazione grafica di una rete P/T è un <strong>digrafo</strong>.</p>
+
+    <h3>Le Matrici</h3>
+    <ul>
+      <li><strong>Pre(p, t)</strong>: matrice degli archi <em>pre-incidenza</em>, rappresenta gli archi in ingresso verso le transizioni.</li>
+      <li><strong>Post(p, t)</strong>: matrice degli archi <em>post-incidenza</em>, rappresenta gli archi in uscita dalle transizioni verso i posti.</li>
+      <li><strong>C(p, t)</strong>: matrice di incidenza, ottenuta come <code>C = Post - Pre</code>.</li>
+    </ul>
+
+    <img src="images/matrici_pettri.png" alt="Matrici Pre, Post e Incidenza" style="max-width:100%;">
+
+    <h3>Marcatura</h3>
+    <p>Alla rete di Petri può essere aggiunta una <strong>marcatura</strong>, che indica lo stato corrente della rete. È una funzione che associa a ogni posto un numero intero non negativo.</p>
+    <p>La marcatura è rappresentata con un vettore <code>M = {m1, m2, m3, ...}</code>, dove ogni <code>mi</code> indica quante "marche" (token) si trovano nel posto <code>pi</code>.</p>
+
+    <h2>Vantaggi delle Reti di Petri</h2>
+    <ul>
+      <li>La rappresentazione grafica è <strong>compatta</strong> e facilita la comprensione del funzionamento del sistema.</li>
+      <li>Le reti di Petri sono anche un <strong>modello matematico</strong> e permettono analisi con l'<strong>algebra lineare</strong>.</li>
+      <li>La loro <strong>modularità</strong> consente di isolare sottosistemi e analizzarli separatamente.</li>
+      <li>Permettono di rappresentare e analizzare sistemi con <strong>attività parallele</strong> e <strong>concorrenti</strong>.</li>
+    </ul>
 
     <h2>Applicazioni</h2>
     <p>Le reti di Petri sono utilizzate in ingegneria del software, automazione industriale, e progettazione di sistemi distribuiti per validare comportamenti e trovare deadlock.</p>
