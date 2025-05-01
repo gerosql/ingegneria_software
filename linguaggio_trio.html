@@ -42,12 +42,14 @@
     </section>
 
     <section>
-      <h2>Operatori Principali</h2>
+      <h2>Operatori Derivati</h2>
       <ul>
         <li><strong>Alw[a,b] P(t)</strong>: P è sempre vero tra t+a e t+b.</li>
         <li><strong>Som[a,b] P(t)</strong>: P è vero almeno una volta tra t+a e t+b.</li>
         <li><strong>Until[a,b](P,Q)(t)</strong>: P è vero fino a quando Q diventa vero tra t+a e t+b.</li>
-        <li><strong>Moreover, Once, Since</strong>: operatori per eventi nel passato.</li>
+        <li><strong>Moreover[a,b] P(t) </strong>: P è sempre vera nel passato, fra t–b e t–a.</li>
+        <li><strong>Once[a,b] P(t) </strong>: P è vera almeno un volta nel passato, fra t–b e t–a.</li>
+        <li><strong>Since[a,b] (P, Q)(t) </strong>: Q è diventato vero in qualche istante tra t–b e t–a, e da quel momento fino a t la proprietà P è sempre rimasta vera.</li>
       </ul>
     </section>
 
@@ -59,17 +61,17 @@
     <section>
       <h2>Espressione di Vincoli Real-time</h2>
       <ul>
-        <li><strong>Ritardi fissi:</strong> Alw[0,0](A(t) ⇒ Som[0,d] B(t))</li>
-        <li><strong>Periodicità:</strong> Alw(C(t) ⇒ C(t+T))</li>
-        <li><strong>Vincoli inter-evento:</strong> Alw(A(t) ⇒ Som[a,b] B(t))</li>
+        <li><strong>Ritardi fissi:</strong> se evento A avviene in t, allora B deve accadere entro l’ unità di tempo: Alw[0,0](A(t) ⇒ Som[0,d] B(t))</li>
+        <li><strong>Periodicità:</strong> l’evento C si ripete ogni T unità: Alw(C(t) ⇒ C(t+T))</li>
+        <li><strong>Vincoli inter-evento:</strong> tra A e B devono passare almeno a e al massimo b: Alw(A(t) ⇒ Som[a,b] B(t))</li>
       </ul>
     </section>
 
     <section>
       <h2>Esempi Applicativi</h2>
       <ul>
-        <li><strong>Canale di comunicazione:</strong> Alw(send(p,t) ⇒ Som[0,d] receive(p,t))</li>
-        <li><strong>Sistemi periodici:</strong> Alw(start(t) ⇒ start(t+50))</li>
+        <li><strong>Canale di comunicazione:</strong> se si invia un pacchetto send(p) in t, si garantisce receive(p) entro un ritardo massimo d: Alw(send(p,t) ⇒ Som[0,d] receive(p,t))</li>
+        <li><strong>Sistemi periodici:</strong> un task di controllo che deve eseguire ogni 50 ms: Alw(start(t) ⇒ start(t+50))</li>
       </ul>
     </section>
 
