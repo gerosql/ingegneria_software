@@ -55,7 +55,10 @@ Agenda
 ―――――――――――――――――――――――
   dom compleanno = conosciuto
       </pre>
-      <p><strong>Invariante:</strong> Ogni nome in compleanno appartiene a conosciuto.</p>
+      <p> P indica il tipo set del tipo associato. </p> </p>
+      <p> conosciuto è l’insieme dei nomi registrati. </p>
+      <p> compleanno è una funzione parziale da nome a data.</p>
+      <p> Invariante: tutti i nomi presenti in compleanno appartengono a conosciuto. </p>
     </section>
 
     <section>
@@ -71,18 +74,10 @@ Aggiungi
   conosciuto′ = conosciuto ∪ {nome?}
   compleanno′ = compleanno ∪ {nome? ↦ data?}
       </pre>
-
-      <h3>Eliminazione di un compleanno</h3>
-      <pre>
-Elimina
-  ΔAgenda
-  nome?: NOME
-―――――――――――――――――――――――
-  nome? ∈ conosciuto
-  conosciuto′ = conosciuto \ {nome?}
-  compleanno′ = {nome?} ▷ compleanno
-      </pre>
-
+      <p> Δ significa che produce una modifica dello stato</p>
+      <p> ? significa che è una variabile d’ingresso</p>
+      <p> dopo l’esecuzione dell’operazione X (prima), X’ (dopo) </p>
+        
       <h3>Modifica di un compleanno</h3>
       <pre>
 Modifica
@@ -93,6 +88,24 @@ Modifica
   nome? ∈ conosciuto
   compleanno′ = compleanno ⊕ {nome? ↦ data?}
       </pre>
+        <p> ⊕ è l’operatore di overriding</p>
+    </section>
+
+    <section>
+      <h2>Casi particolari e composizione</h2>
+      <ul>
+        <li><strong>RISULTATO ::= ok | già_presente | non_presente</strong>Per gestire nomi già presenti o assenti si introduce un tipo di risultato</li>
+        <li><strong>AggiungiRobusto = SpecPart ⨄ Aggiungi</strong> si definiscono schemi ausiliari (ad es. SpecPart) che individuano i casi particolari</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Perché Z? </h2>
+      <ul>
+        <li><strong>Precisione: </strong> ogni operazione è formalmente definita. </li>
+        <li><strong>Verificabilità:</strong> si possono usare strumenti automatici per controllare consistenza degli schemi. </li>
+        <li><strong>Modularità: </strong> grazie agli schemi e agli operatori di composizione.  </li>
+      </ul>
     </section>
   </main>
 
