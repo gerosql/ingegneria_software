@@ -7,23 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Linguaggio Z</h1>
-    <nav>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="ciclo_vita.html">Ciclo di Vita</a></li>
-        <li><a href="specifica_requisiti.html">Specifiche</a></li>
-        <li><a href="dfd.html">DFD</a></li>
-        <li><a href="msf.html">MSF</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
         <li><a href="reti_petri.html">Reti di Petri</a></li>
-        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
-        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
         <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
         <li><a href="stima_costi.html">Stima dei Costi</a></li>
-        <li><a href="linguaggi.html">Linguaggi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
       </ul>
-    </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Linguaggio Z</h1>
   </header>
 
   <main>
@@ -67,47 +72,27 @@ Aggiungi
   compleanno′ = compleanno ∪ {nome? ↦ data?}
       </pre>
 
-      <h3>Ricerca di un compleanno</h3>
+      <h3>Eliminazione di un compleanno</h3>
       <pre>
-Ricerca
-  ΞAgenda
+Elimina
+  ΔAgenda
   nome?: NOME
-  data!: DATA
 ―――――――――――――――――――――――
   nome? ∈ conosciuto
-  data! = compleanno nome?
+  conosciuto′ = conosciuto \ {nome?}
+  compleanno′ = {nome?} ▷ compleanno
       </pre>
 
-      <h3>Promemoria per una data</h3>
+      <h3>Modifica di un compleanno</h3>
       <pre>
-Promemoria
-  ΞAgenda
+Modifica
+  ΔAgenda
+  nome?: NOME
   data?: DATA
-  nomi!: ℙ NOME
 ―――――――――――――――――――――――
-  nomi! = { n: NOME | compleanno n = data? }
+  nome? ∈ conosciuto
+  compleanno′ = compleanno ⊕ {nome? ↦ data?}
       </pre>
-    </section>
-
-    <section>
-      <h2>Casi Particolari e Composizione</h2>
-      <p>Per gestire casi particolari, si definisce un tipo di risultato:</p>
-      <pre>
-RISULTATO ::= ok | già_presente | non_presente
-      </pre>
-      <p>E si usano schemi ausiliari combinati tramite operatori come union e rinominazione.</p>
-      <pre>
-AggiungiRobusto = SpecPart ⨄ Aggiungi
-      </pre>
-    </section>
-
-    <section>
-      <h2>Perché usare il Linguaggio Z?</h2>
-      <ul>
-        <li><strong>Precisione:</strong> Definizione formale delle operazioni.</li>
-        <li><strong>Verificabilità:</strong> Strumenti automatici per controllo e validazione.</li>
-        <li><strong>Modularità:</strong> Schemi riutilizzabili e composizione semplificata.</li>
-      </ul>
     </section>
   </main>
 
