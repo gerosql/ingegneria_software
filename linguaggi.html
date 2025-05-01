@@ -30,159 +30,107 @@
   <header>
     <h1>Linguaggi</h1>
   </header>
+
   <main>
-  <h1>Fondamenti di Ingegneria del Software - Linguaggi</h1>
-  <h2>1. Ruolo dei Linguaggi nel Ciclo di Vita del Software</h2>
-  <p>I linguaggi informatici supportano diverse fasi dello sviluppo software:</p>
-  <ul>
-    <li><strong>Linguaggi di specifica:</strong> utilizzati per descrivere formalmente i requisiti e le funzionalità del sistema.</li>
-    <li><strong>Linguaggi di progettazione:</strong> strumenti per rappresentare la struttura e l’architettura del sistema (es. UML).</li>
-    <li><strong>Linguaggi di programmazione:</strong> consentono la codifica effettiva delle funzionalità implementabili su macchina.</li>
-  </ul>
+    <h1>Fondamenti di Ingegneria del Software - Linguaggi</h1>
 
-  <h2>2. Paradigmi Computazionali</h2>
-  <ul>
-    <li><strong>Imperativi o Procedurali:</strong>
-      <ul>
-        <li>Computazione come sequenza di comandi.</li>
-        <li>Stato modificabile.</li>
-        <li>Linguaggi: C, Pascal.</li>
-        <li>Modellano direttamente l’architettura di von Neumann.</li>
-      </ul>
-    </li>
-    <li><strong>Funzionali:</strong>
-      <ul>
-        <li>Basati sulla valutazione di funzioni matematiche.</li>
-        <li>Nessun concetto di stato condiviso o mutabile.</li>
-        <li>Linguaggi: Haskell, ML, Lisp.</li>
-      </ul>
-    </li>
-    <li><strong>Logici:</strong>
-      <ul>
-        <li>La computazione è un processo di inferenza logica.</li>
-        <li>Linguaggi: Prolog.</li>
-      </ul>
-    </li>
-  </ul>
+    <!-- Tutta la parte dei paragrafi 1-12 qui (come già presente nella tua pagina) -->
 
-  <h2>3. Evoluzione Storica dei Linguaggi</h2>
-  <p><strong>Anni ‘50-’60:</strong></p>
-  <ul>
-    <li>FORTRAN: calcolo scientifico, compilazione separata.</li>
-    <li>ALGOL60: blocchi, strutture nidificate, ricorsione.</li>
-    <li>COBOL: gestione file e input/output.</li>
-    <li>LISP: elaborazione simbolica, funzioni come dati.</li>
-    <li>APL: sintassi compatta per array.</li>
-    <li>SNOBOL4: pattern matching su stringhe, backtracking.</li>
-  </ul>
-  <p><strong>Anni ’60-’70:</strong></p>
-  <ul>
-    <li>Pascal: didattico, disciplina.</li>
-    <li>Simula 67: primo linguaggio OOP.</li>
-    <li>Algol 68: molto strutturato e ortogonale.</li>
-  </ul>
-  <p><strong>Anni ’70:</strong></p>
-  <ul>
-    <li>Smalltalk: OOP completo.</li>
-    <li>Prolog: logica primo ordine.</li>
-    <li>Modula 2, Concurrent Pascal: modularità e concorrenza.</li>
-    <li>Euclid, Gipsy: sicurezza.</li>
-  </ul>
-  <p><strong>Anni ’80:</strong></p>
-  <ul>
-    <li>Eiffel, C++, Objective-C: OOP consolidato.</li>
-    <li>Ada: uso militare e civile.</li>
-  </ul>
-  <p><strong>Anni ’90:</strong></p>
-  <ul>
-    <li>Visual Basic: UI semplificate.</li>
-    <li>Java: portabilità e rete.</li>
-    <li>Perl, PHP, Python, Ruby: scripting e dinamica.</li>
-  </ul>
+    <h2>13. Scope Statico vs Scope Dinamico</h2>
 
-  <h2>4. Concetti Fondamentali: Entità nei Programmi</h2>
-  <ul>
-    <li>Variabili: rappresentazioni simboliche di celle di memoria.</li>
-    <li>Attributi: nome, tipo, valore, indirizzo, scope, lifetime.</li>
-  </ul>
+    <p><strong>Ambito o Scope Statico:</strong> le variabili sono accessibili solo nel blocco in cui sono dichiarate. Le funzioni non condividono le variabili a meno che non siano dichiarate in uno scope comune.</p>
 
-  <h2>5. Binding</h2>
-  <ul>
-    <li>Associazione tra entità e attributi.</li>
-    <li>Binding statico: fase di compilazione (es. tipo, indirizzo).</li>
-    <li>Binding dinamico: fase di esecuzione (es. valore).</li>
-  </ul>
+    <pre>
+void f() {
+  int x;
+  ...
+  x = 5; // OK
+  ...
+}
 
-  <h2>6. Variabili: Dettagli</h2>
-  <ul>
-    <li><strong>Nome:</strong> identificatore univoco.</li>
-    <li><strong>Scope:</strong>
-      <ul>
-        <li>Statico: posizione nel codice.</li>
-        <li>Dinamico: ordine di esecuzione.</li>
-      </ul>
-    </li>
-    <li><strong>Lifetime:</strong>
-      <ul>
-        <li>Statico: per tutta la durata del programma.</li>
-        <li>Dinamico: creato/distrutto in esecuzione.</li>
-      </ul>
-    </li>
-    <li><strong>Valore:</strong> contenuto della memoria.</li>
-  </ul>
+void g() {
+  ...
+  x = x + 1; // KO: x non è visibile qui
+  ...
+}
 
-  <h2>7. Costanti</h2>
-  <ul>
-    <li>Valore immutabile.</li>
-    <li>Manifeste (Pascal), Dinamiche (Algol 68).</li>
-  </ul>
+void h() {
+  int x;
+  ...
+  x = 4; // OK
+  ...
+}
+    </pre>
 
-  <h2>8. Inizializzazione</h2>
-  <ul>
-    <li>Esplicita: buona pratica.</li>
-    <li>Valori di default o errore se non inizializzate.</li>
-  </ul>
+    <p><strong>Ambito o Scope Dinamico:</strong> le variabili sono risolte in base all’ordine delle chiamate a runtime. La funzione g() può accedere a x se chiamata da un contesto che lo contiene.</p>
 
-  <h2>9. Tipi di Variabili</h2>
-  <ul>
-    <li>Predefiniti: int, bool, char…</li>
-    <li>Derivati: array, record, strutture.</li>
-    <li>OOP: classi con metodi.</li>
-  </ul>
+    <h3>Esecuzione 1</h3>
+    <pre>
+void f() {
+  int x;
+  x = 5;
+}
 
-  <h2>10. Binding dei Tipi</h2>
-  <ul>
-    <li><strong>Statico:</strong> dichiarazione esplicita/implicita. Più sicuro.</li>
-    <li><strong>Dinamico:</strong> tipo desunto da valore. Richiede descrittori run-time.</li>
-  </ul>
+void g() {
+  x = x + 1;
+}
 
-  <h2>11. Confronto Binding Statico vs Dinamico</h2>
-  <table border="1" cellpadding="8" cellspacing="0" style="margin: 20px auto; border-collapse: collapse; width: fit-content; max-width: 90%; box-sizing: border-box;">
-    <thead>
-      <tr><th>Aspetto</th><th>Binding Statico</th><th>Binding Dinamico</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Flessibilità</td><td>Limitata</td><td>Elevata</td></tr>
-      <tr><td>Sicurezza</td><td>Alta</td><td>Minore</td></tr>
-      <tr><td>Efficienza</td><td>Alta</td><td>Bassa</td></tr>
-      <tr><td>Controlli</td><td>Compile-time</td><td>Run-time</td></tr>
-      <tr><td>Adatto a</td><td>Linguaggi compilati</td><td>Linguaggi interpretati</td></tr>
-    </tbody>
-  </table>
+void h() {
+  int x;
+  x = 4;
+}
 
-  <h2>12. Implicazioni</h2>
-  <ul>
-    <li>Nei linguaggi statici il compilatore ottimizza meglio.</li>
-    <li>Nei dinamici si controllano i tipi a runtime.</li>
-    <li>Serve un descrittore run-time con tipo e valore.</li>
-    <li>Le operazioni dipendono dai tipi in esecuzione.</li>
-  </ul>
+Chiamate: f(); g(); h();
+Risultato: x = 6 (x di f() viene aggiornato da g())
+    </pre>
 
-  <h2>Conclusione</h2>
-  <p>La scelta tra binding statico e dinamico, tra scope statico e dinamico, e tra paradigmi diversi,
-influisce su flessibilità, sicurezza, leggibilità e performance. Comprendere i
-fondamenti dei linguaggi è essenziale per scegliere o progettare strumenti software adeguati.</p>
-</main>
+    <h3>Esecuzione 2</h3>
+    <pre>
+void f() {
+  int x;
+  ...
+  x = 5;
+  ...
+}
+
+void g() {
+  ...
+  x = x + 1;
+  ...
+}
+
+void h() {
+  int x;
+  ...
+  x = 4;
+  ...
+}
+
+Chiamate: f(); g(); h();
+// Dipende dal contesto di chiamata dinamico
+    </pre>
+
+    <h3>Esecuzione 3</h3>
+    <pre>
+void f() {
+  int x;
+  x = 5;
+}
+
+void g() {
+  x = x + 1;
+}
+
+void h() {
+  int x;
+  x = 4;
+}
+
+Chiamate: f(); h(); g();
+Risultato: x = 5 (x aggiornato nell’ambito corrente dinamico)
+    </pre>
+  </main>
+
   <footer>
     <p>© 2025 The Veins 4CI</p>
   </footer>
