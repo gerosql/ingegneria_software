@@ -7,27 +7,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Specifica dei Requisiti</h1>
-    <nav>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="ciclo_vita.html">Ciclo di Vita</a></li>
-        <li><a href="specifica_requisiti.html">Specifiche</a></li>
-        <li><a href="dfd.html">DFD</a></li>
-        <li><a href="msf.html">MSF</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
         <li><a href="reti_petri.html">Reti di Petri</a></li>
-        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
-        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
         <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
         <li><a href="stima_costi.html">Stima dei Costi</a></li>
-        <li><a href="linguaggi.html">Linguaggi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
       </ul>
-    </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Specifica dei Requisiti</h1>
   </header>
 
   <main>
-    <h2> La specifica dei requisiti</h2>
+    <h2>La specifica dei requisiti</h2>
     <p>La specifica dei requisiti è uno dei documenti più importanti: descrive cosa deve fare il software, come se fosse una lista dei desideri dell’utente, ma scritta in modo tecnico e preciso.</p>
 
     <h3>Perché è così importante?</h3>
@@ -53,7 +58,7 @@
 
     <img src="images/specifica_requisiti_schema.jpg" alt="Schema dei requisiti software" style="max-width:100%; margin: 20px 0;">
 
-    <h2> Come si scrivono le specifiche?</h2>
+    <h2>Come si scrivono le specifiche?</h2>
     <p>Esistono diversi livelli di formalità, in base alla complessità del progetto:</p>
     <table border="1" cellpadding="8" cellspacing="0">
       <thead>
@@ -82,13 +87,13 @@
       </tbody>
     </table>
 
-    <h2> Le specifiche possono essere:</h2>
+    <h2>Le specifiche possono essere:</h2>
     <ul>
       <li><strong>Operazionali</strong>: spiegano passo per passo come funziona il sistema.</li>
       <li><strong>Descrittive</strong>: elencano proprietà che il sistema deve rispettare, lasciando libertà su come realizzarle.</li>
     </ul>
 
-    <h2> Conclusione: perché tutto questo è importante?</h2>
+    <h2>Conclusione: perché tutto questo è importante?</h2>
     <p>Seguire un ciclo di vita ben strutturato e definire chiaramente i requisiti:</p>
     <ul>
       <li>Evita errori costosi</li>
