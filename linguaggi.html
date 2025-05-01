@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linguaggi di Specifica</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="hamburger-menu">
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger-button">☰</label>
-    <div class="menu-content">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
-        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
-        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
-        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
-        <li><a href="reti_petri.html">Reti di Petri</a></li>
-        <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
-        <li><a href="stima_costi.html">Stima dei Costi</a></li>
-        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
-        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
-        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
-      </ul>
-    </div>
-  </div>
+    <h2>13. Scope delle Variabili: Statico e Dinamico</h2>
+    <p>
+      Lo <strong>scope</strong> (ambito di visibilità) di una variabile definisce dove essa può essere usata all'interno del programma. Esistono due principali modalità di determinazione dello scope:
+    </p>
+    <ul>
+      <li><strong>Scope statico (lessicale):</strong> lo scope è determinato in fase di compilazione, in base alla struttura del codice. Le variabili sono accessibili solo all’interno del blocco in cui sono state dichiarate.</li>
+      <li><strong>Scope dinamico:</strong> lo scope viene risolto in fase di esecuzione, seguendo la catena di chiamate alle funzioni. Le variabili vengono cercate nei contesti delle funzioni chiamanti.</li>
+    </ul>
+    <p>
+      Di seguito alcuni esempi scritti in linguaggio C che mostrano il comportamento delle variabili nei due tipi di scope.
+    </p>
 
-  <header>
-    <h1>Linguaggi</h1>
-  </header>
-
-  <main>
-    <h1>Fondamenti di Ingegneria del Software - Linguaggi</h1>
-
-    <!-- Tutta la parte dei paragrafi 1-12 qui (come già presente nella tua pagina) -->
-
-    <h2>13. Scope Statico vs Scope Dinamico</h2>
-
-    <p><strong>Ambito o Scope Statico:</strong> le variabili sono accessibili solo nel blocco in cui sono dichiarate. Le funzioni non condividono le variabili a meno che non siano dichiarate in uno scope comune.</p>
-
+    <h3>Ambito o Scope Statico</h3>
     <pre>
 void f() {
   int x;
@@ -50,7 +21,7 @@ void f() {
 
 void g() {
   ...
-  x = x + 1; // KO: x non è visibile qui
+  x = x + 1; // KO (x non visibile qui)
   ...
 }
 
@@ -62,9 +33,7 @@ void h() {
 }
     </pre>
 
-    <p><strong>Ambito o Scope Dinamico:</strong> le variabili sono risolte in base all’ordine delle chiamate a runtime. La funzione g() può accedere a x se chiamata da un contesto che lo contiene.</p>
-
-    <h3>Esecuzione 1</h3>
+    <h3>Ambito o Scope Dinamico – Esecuzione 1</h3>
     <pre>
 void f() {
   int x;
@@ -72,7 +41,7 @@ void f() {
 }
 
 void g() {
-  x = x + 1;
+  x = x + 1; // usa x di f()
 }
 
 void h() {
@@ -81,10 +50,10 @@ void h() {
 }
 
 Chiamate: f(); g(); h();
-Risultato: x = 6 (x di f() viene aggiornato da g())
+Risultato: x = 6
     </pre>
 
-    <h3>Esecuzione 2</h3>
+    <h3>Ambito o Scope Dinamico – Esecuzione 2</h3>
     <pre>
 void f() {
   int x;
@@ -107,10 +76,9 @@ void h() {
 }
 
 Chiamate: f(); g(); h();
-// Dipende dal contesto di chiamata dinamico
     </pre>
 
-    <h3>Esecuzione 3</h3>
+    <h3>Ambito o Scope Dinamico – Esecuzione 3</h3>
     <pre>
 void f() {
   int x;
@@ -127,12 +95,5 @@ void h() {
 }
 
 Chiamate: f(); h(); g();
-Risultato: x = 5 (x aggiornato nell’ambito corrente dinamico)
+Risultato: x = 5
     </pre>
-  </main>
-
-  <footer>
-    <p>© 2025 The Veins 4CI</p>
-  </footer>
-</body>
-</html>
