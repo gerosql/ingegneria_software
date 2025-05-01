@@ -5,6 +5,26 @@ body {
   background-color: #f8f9fa;
   color: #333;
 }
+body {
+  background-image: url("images/background.jpg");
+  background-repeat: repeat-y;
+  background-position: left center, right center;
+  background-size: auto 150%;
+  background-attachment: fixed;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  max-width: 970px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+
 
 header {
   background-color: #004080;
@@ -67,10 +87,9 @@ footer {
   color: white;
   text-align: center;
   padding: 1em;
-  margin-top: 2em;
+  margin-top: 0; 
 }
 
-/* Hamburger menu */
 .hamburger-menu {
   position: absolute;
   top: 20px;
