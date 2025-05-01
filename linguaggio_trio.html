@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linguaggio TRIO</title>
+  <title>Logica Temporale TRIO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Linguaggio TRIO</h1>
+    <h1>Logica Temporale TRIO</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -25,22 +25,60 @@
       </ul>
     </nav>
   </header>
+
   <main>
-    <h2>Che cos'è TRIO?</h2>
-    <p>TRIO è un linguaggio formale per la specifica di sistemi temporizzati, basato sulla logica temporale. Permette di descrivere e analizzare il comportamento dei sistemi nel tempo.</p>
+    <section>
+      <h2>Cos'è la Logica Temporale TRIO?</h2>
+      <p>TRIO (Tempo Reale Implicito) è un’estensione della logica del primo ordine, sviluppata per specificare e verificare formalmente requisiti di sistemi real-time, in cui il rispetto di vincoli temporali è essenziale.</p>
+    </section>
 
-    <h2>Caratteristiche di TRIO</h2>
-    <ul>
-      <li>Supporta la logica temporale lineare</li>
-      <li>Espressività nella modellazione di vincoli temporali</li>
-      <li>Adatto per la verifica di proprietà di sicurezza e correttezza</li>
-    </ul>
+    <section>
+      <h2>Dal Proposizionale al Temporale</h2>
+      <p>TRIO parte dalla logica proposizionale classica, introducendo operatori temporali per riferirsi a eventi passati o futuri, e si estende alla logica del primo ordine.</p>
+    </section>
 
-    <h2>Utilizzo</h2>
-    <p>È usato per specificare sistemi real-time, come ad esempio quelli presenti nei settori ferroviario, aeronautico e biomedicale.</p>
+    <section>
+      <h2>Operatori Principali</h2>
+      <ul>
+        <li><strong>Alw[a,b] P(t)</strong>: P è sempre vero tra t+a e t+b.</li>
+        <li><strong>Som[a,b] P(t)</strong>: P è vero almeno una volta tra t+a e t+b.</li>
+        <li><strong>Until[a,b](P,Q)(t)</strong>: P è vero fino a quando Q diventa vero tra t+a e t+b.</li>
+        <li><strong>Moreover, Once, Since</strong>: operatori per eventi nel passato.</li>
+      </ul>
+    </section>
 
-    <img src="images/linguaggio_trio.jpg" alt="Schema di TRIO">
+    <section>
+      <h2>Sintassi e Semantica</h2>
+      <p>Le formule di TRIO sono valutate in modelli temporali continui (ℝ) o discreti (ℕ), con condizioni precise che determinano la verità o falsità delle proposizioni in ogni istante temporale.</p>
+    </section>
+
+    <section>
+      <h2>Espressione di Vincoli Real-time</h2>
+      <ul>
+        <li><strong>Ritardi fissi:</strong> Alw[0,0](A(t) ⇒ Som[0,d] B(t))</li>
+        <li><strong>Periodicità:</strong> Alw(C(t) ⇒ C(t+T))</li>
+        <li><strong>Vincoli inter-evento:</strong> Alw(A(t) ⇒ Som[a,b] B(t))</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Esempi Applicativi</h2>
+      <ul>
+        <li><strong>Canale di comunicazione:</strong> Alw(send(p,t) ⇒ Som[0,d] receive(p,t))</li>
+        <li><strong>Sistemi periodici:</strong> Alw(start(t) ⇒ start(t+50))</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Perché usare TRIO?</h2>
+      <ul>
+        <li><strong>Formalità:</strong> permette specifiche chiare e matematiche.</li>
+        <li><strong>Verificabilità:</strong> supporta strumenti di model-checking.</li>
+        <li><strong>Applicabilità:</strong> ideale per sistemi embedded e applicazioni critiche come avionica e automazione industriale.</li>
+      </ul>
+    </section>
   </main>
+
   <footer>
     <p>© 2025 The Veins 4CI</p>
   </footer>
