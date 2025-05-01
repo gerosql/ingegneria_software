@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reti di Petri</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
+        <li><a href="reti_petri.html">Reti di Petri</a></li>
+        <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
+        <li><a href="stima_costi.html">Stima dei Costi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <header>
+    <h1>Reti di Petri</h1>
+  </header>
+
+  <main>
+    <h2>Che cosa sono le Reti di Petri?</h2>
+    <p>Le reti di Petri sono un modello di <strong>sistemi a eventi discreti</strong>. Sono usate per rappresentare gli eventi di un sistema secondo l'ordine in cui si presentano. Per questa ragione sono anche dette <strong>reti posto/transizione</strong> o <strong>P/T</strong>.</p>
+
+    <h3>Perché si chiamano Reti di Petri?</h3>
+    <p>Prendono il nome del loro autore: sono state ideate dal ricercatore tedesco <strong>Karl Adam Petri</strong> negli anni '60.</p>
+
+    <h2>Struttura delle Reti P/T</h2>
+    <p>Una rete di Petri del tipo posto/transizione (P/T) è composta da due insiemi e due matrici.</p>
+    <ul>
+      <li>I <strong>posti</strong> (p) sono rappresentati da cerchi. Formalmente l'insieme dei posti è indicato con <code>P = {p1, p2, p3, ...}</code></li>
+      <li>Le <strong>transizioni</strong> (t) sono rappresentate da barre o rettangoli. L'insieme delle transizioni è indicato con <code>T = {t1, t2, t3, ...}</code></li>
+    </ul>
+
+    <img src="images/rete_petri_struttura.gif" alt="Rete di Petri struttura P/T" style="max-width:100%;">
+
+    <p>La rappresentazione grafica di una rete P/T è un <strong>digrafo</strong>.</p>
+
+    <h3>Le Matrici</h3>
+    <ul>
+      <li><strong>Pre(p, t)</strong>: matrice degli archi <em>pre-incidenza</em>, rappresenta gli archi in ingresso verso le transizioni.</li>
+      <li><strong>Post(p, t)</strong>: matrice degli archi <em>post-incidenza</em>, rappresenta gli archi in uscita dalle transizioni verso i posti.</li>
+      <li><strong>C(p, t)</strong>: matrice di incidenza, ottenuta come <code>C = Post - Pre</code>.</li>
+    </ul>
+
+    <img src="images/matrici_petri.jpg" alt="Matrici Pre, Post e Incidenza" style="max-width:100%;">
+
+    <h3>Marcatura</h3>
+    <p>Alla rete di Petri può essere aggiunta una <strong>marcatura</strong>, che indica lo stato corrente della rete. È una funzione che associa a ogni posto un numero intero non negativo.</p>
+    <p>La marcatura è rappresentata con un vettore <code>M = {m1, m2, m3, ...}</code>, dove ogni <code>mi</code> indica quante "marche" (token) si trovano nel posto <code>pi</code>.</p>
+
+    <h2>Vantaggi delle Reti di Petri</h2>
+    <ul>
+      <li>La rappresentazione grafica è <strong>compatta</strong> e facilita la comprensione del funzionamento del sistema.</li>
+      <li>Le reti di Petri sono anche un <strong>modello matematico</strong> e permettono analisi con l'<strong>algebra lineare</strong>.</li>
+      <li>La loro <strong>modularità</strong> consente di isolare sottosistemi e analizzarli separatamente.</li>
+      <li>Permettono di rappresentare e analizzare sistemi con <strong>attività parallele</strong> e <strong>concorrenti</strong>.</li>
+    </ul>
+
+    <h2>Applicazioni</h2>
+    <p>Le reti di Petri sono utilizzate in ingegneria del software, automazione industriale, e progettazione di sistemi distribuiti per validare comportamenti e trovare deadlock.</p>
+  </main>
+
+  <footer>
+    <p>© 2025 The Veins 4CI</p>
+  </footer>
+</body>
+</html>

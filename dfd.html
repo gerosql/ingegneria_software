@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Flow Diagrams (DFD)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
+        <li><a href="reti_petri.html">Reti di Petri</a></li>
+        <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
+        <li><a href="stima_costi.html">Stima dei Costi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <header>
+    <h1>Data Flow Diagrams (DFD)</h1>
+  </header>
+  <main>
+    <h2>Cosa sono i DFD?</h2>
+    <p>I <strong>Data Flow Diagrams (DFD)</strong> sono strumenti fondamentali per rappresentare graficamente il flusso delle informazioni in un sistema informativo. Introdotti da <strong>Tom De Marco</strong> nel 1978, sono usati in fase di analisi per comprendere come i dati si muovono tra gli elementi del sistema e come vengono trasformati.</p>
+
+    <p>I DFD appartengono alla categoria degli strumenti <strong>semiformali e operazionali</strong>: semiformali perché seguono regole precise ma non rigorose come quelle matematiche, operazionali perché descrivono chiaramente cosa accade dentro il sistema.</p>
+
+    <p>Grazie alla loro semplicità visiva, i DFD consentono di ottenere una <strong>visione chiara e gerarchica</strong> del sistema, facilitando il lavoro di analisi, progettazione e comunicazione tra analisti, sviluppatori e stakeholder.</p>
+
+    <img src="images/dfd_schema.jpg" alt="Schema dei Data Flow Diagrams" style="max-width:100%; margin: 20px 0;">
+
+    <h3>Componenti principali</h3>
+    <ul>
+      <li><strong>Processi</strong>: trasformano dati in input in dati in output (es. “Calcola Prezzo”)</li>
+      <li><strong>Flussi di dati</strong>: rappresentano il movimento dei dati tra i componenti</li>
+      <li><strong>Archivi</strong>: contengono dati memorizzati (es. un database)</li>
+      <li><strong>Entità esterne</strong>: soggetti esterni che forniscono o ricevono dati</li>
+    </ul>
+
+    <h2>Livelli dei DFD</h2>
+    <table border="1" cellpadding="8" cellspacing="0" style="margin: 20px auto; border-collapse: collapse; width: fit-content; max-width: 90%; box-sizing: border-box;">
+      <thead>
+        <tr><th>Livello</th><th>Descrizione</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Contesto</td><td>Mostra l'intero sistema come un unico processo con entità esterne e flussi principali</td></tr>
+        <tr><td>Livello 0</td><td>Scompone il sistema in macro-processi principali, mostrando archivi e flussi</td></tr>
+        <tr><td>Livelli successivi</td><td>Raffinano ulteriormente i processi in sottoprocessi dettagliati</td></tr>
+      </tbody>
+    </table>
+
+    <img src="images/dfd_levels.png" alt="Livelli di dettaglio nei DFD" style="max-width:100%; margin: 20px 0;">
+
+    <h2>Tipologie di specifica con DFD</h2>
+    <ul>
+      <li><strong>Operazionali</strong>: mostrano cosa accade nel sistema passo dopo passo</li>
+      <li><strong>Descrittive</strong>: indicano cosa deve accadere, senza imporre come</li>
+    </ul>
+
+    <h2>Conclusione: perché i DFD sono utili?</h2>
+    <p>Utilizzare i Data Flow Diagrams consente di:</p>
+    <ul>
+      <li>Analizzare il sistema in modo strutturato</li>
+      <li>Individuare facilmente errori o ambiguità nei requisiti</li>
+      <li>Ridurre i tempi e i costi legati a modifiche successive</li>
+      <li>Ottenere una documentazione visiva efficace</li>
+    </ul>
+
+    <p>In sintesi, i DFD rappresentano un ponte tra l’analisi concettuale e la progettazione tecnica: sono uno strumento potente, semplice ed efficace, che dovrebbe far parte di ogni buona analisi del software.</p>
+  </main>
+  <footer>
+    <p>© 2025 The Veins 4CI</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linguaggio Z</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
+        <li><a href="reti_petri.html">Reti di Petri</a></li>
+        <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
+        <li><a href="stima_costi.html">Stima dei Costi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <header>
+    <h1>Linguaggio Z</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cos'è il Linguaggio Z?</h2>
+      <p>Il linguaggio Z, sviluppato all’Università di Oxford, è un formalismo per la specifica rigorosa dei sistemi software, basato sulla logica del primo ordine e la teoria degli insiemi. Utilizza schemi per descrivere aspetti statici e dinamici.</p>
+    </section>
+
+    <section>
+      <h2>Costrutti di Base</h2>
+      <ul>
+        <li><strong>Insiemi e Funzioni:</strong> Utilizza concetti della teoria degli insiemi e logica.</li>
+        <li><strong>Stato:</strong> Variabili raggruppate in schemi di stato.</li>
+        <li><strong>Invarianti di Stato:</strong> Condizioni valide in ogni possibile stato.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Esempio di Schema di Stato: Agenda</h2>
+      <pre>
+Agenda
+  conosciuto: ℙ NOME
+  compleanno: NOME ⇸ DATA
+―――――――――――――――――――――――
+  dom compleanno = conosciuto
+      </pre>
+      <p><strong>Invariante:</strong> Ogni nome in compleanno appartiene a conosciuto.</p>
+    </section>
+
+    <section>
+      <h2>Operazioni Principali</h2>
+      <h3>Inserimento di un compleanno</h3>
+      <pre>
+Aggiungi
+  ΔAgenda
+  nome?: NOME
+  data?: DATA
+―――――――――――――――――――――――
+  nome? ∉ conosciuto
+  conosciuto′ = conosciuto ∪ {nome?}
+  compleanno′ = compleanno ∪ {nome? ↦ data?}
+      </pre>
+
+      <h3>Eliminazione di un compleanno</h3>
+      <pre>
+Elimina
+  ΔAgenda
+  nome?: NOME
+―――――――――――――――――――――――
+  nome? ∈ conosciuto
+  conosciuto′ = conosciuto \ {nome?}
+  compleanno′ = {nome?} ▷ compleanno
+      </pre>
+
+      <h3>Modifica di un compleanno</h3>
+      <pre>
+Modifica
+  ΔAgenda
+  nome?: NOME
+  data?: DATA
+―――――――――――――――――――――――
+  nome? ∈ conosciuto
+  compleanno′ = compleanno ⊕ {nome? ↦ data?}
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Veins 4CI</p>
+  </footer>
+</body>
+</html>

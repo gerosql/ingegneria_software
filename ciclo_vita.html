@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciclo di Vita del Software</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
+        <li><a href="reti_petri.html">Reti di Petri</a></li>
+        <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
+        <li><a href="stima_costi.html">Stima dei Costi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <header>
+    <h1>Ciclo di Vita del Software (SDLC)</h1>
+  </header>
+  <main>
+    <h2> Il ciclo di vita del software (Software Development Life Cycle - SDLC)</h2>
+    <p>Il ciclo di vita descrive tutte le attività che accompagnano un software dall’idea iniziale alla fine della sua vita utile. Serve a mantenere il controllo su tempi, costi, qualità e modifiche, proprio come accade in un cantiere o in una fabbrica.</p>
+
+    <img src="images/ciclovita_software.jpg" alt="Diagramma del ciclo di vita del software" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+
+    <h3> Analisi e specifica dei requisiti</h3>
+    <p>È il momento in cui si ascolta il cliente o l’utente finale per capire esattamente cosa vuole:</p>
+    <ul>
+      <li>Quali problemi deve risolvere il software?</li>
+      <li>Quali funzionalità sono indispensabili?</li>
+      <li>Ci sono limiti tecnici o legali da rispettare?</li>
+    </ul>
+    <p>Si produce un <strong>documento dei requisiti</strong>, che serve da contratto tra chi sviluppa e chi paga.</p>
+
+    <h3>Progettazione</h3>
+    <p>Come un architetto disegna una casa prima di costruirla, qui si decide la struttura del software:</p>
+    <ul>
+      <li>Come sarà diviso in componenti?</li>
+      <li>Come comunicheranno tra loro?</li>
+      <li>Come sarà l’interfaccia utente?</li>
+    </ul>
+    <p>Si utilizzano <strong>diagrammi, schemi e modelli</strong> (come l’UML) per rappresentare il progetto.</p>
+
+    <h3> Codifica (o implementazione)</h3>
+    <p>È la fase di scrittura del codice sorgente, cioè la traduzione del progetto in un linguaggio che il computer può capire (come Java, Python, C#.).</p>
+    <ul>
+      <li>Ogni componente viene realizzato singolarmente.</li>
+      <li>Si seguono <strong>standard di scrittura del codice</strong> per facilitare la manutenzione futura.</li>
+    </ul>
+
+    <h3> Verifica e validazione</h3>
+    <p>Qui si controlla che il software funzioni correttamente e risponda ai requisiti.</p>
+    <ul>
+      <li><strong>Verifica</strong>: il software è stato costruito bene? (Controllo tecnico)</li>
+      <li><strong>Validazione</strong>: il software fa ciò che serve all’utente? (Controllo funzionale)</li>
+    </ul>
+    <p> Si eseguono diversi tipi di test:</p>
+    <ul>
+      <li>Test unitari (sulle singole parti)</li>
+      <li>Test di integrazione (sull’interazione tra le parti)</li>
+      <li>Test di sistema (sul software completo)</li>
+      <li>Test di accettazione (fatti dall’utente o cliente)</li>
+    </ul>
+
+    <h3> Distribuzione (deployment)</h3>
+    <p>Una volta che il software è pronto e testato, viene rilasciato agli utenti finali:</p>
+    <ul>
+      <li>In azienda (installazione interna)</li>
+      <li>Online (app, sito, servizio cloud)</li>
+    </ul>
+
+    <h3>Manutenzione</h3>
+    <p>Anche dopo il rilascio, il lavoro non finisce. Il software va mantenuto nel tempo:</p>
+    <ul>
+      <li>Si correggono eventuali errori (bug fix)</li>
+      <li>Si aggiungono nuove funzionalità</li>
+      <li>Si adatta a nuove tecnologie (es. sistemi operativi)</li>
+    </ul>
+    <p>La <strong>manutenzione è spesso la parte più lunga e costosa</strong> dell’intero ciclo di vita.</p>
+  </main>
+  <footer>
+    <p>© 2025 The Veins 4CI</p>
+  </footer>
+</body>
+</html>
