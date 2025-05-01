@@ -7,23 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Macchine a Stati Finiti (FSM)</h1>
-    <nav>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="ciclo_vita.html">Ciclo di Vita</a></li>
-        <li><a href="specifica_requisiti.html">Specifiche</a></li>
-        <li><a href="dfd.html">DFD</a></li>
-        <li><a href="msf.html">MSF</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita del Software</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">Data Flow Diagrams (DFD)</a></li>
+        <li><a href="msf.html">Macchine a Stati Finiti (MSF)</a></li>
         <li><a href="reti_petri.html">Reti di Petri</a></li>
-        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
-        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
         <li><a href="verifica_validazione.html">Verifica e Validazione</a></li>
         <li><a href="stima_costi.html">Stima dei Costi</a></li>
-        <li><a href="linguaggi.html">Linguaggi</a></li>
+        <li><a href="linguaggio_z.html">Linguaggio Z</a></li>
+        <li><a href="linguaggio_trio.html">Linguaggio TRIO</a></li>
+        <li><a href="linguaggi.html">Linguaggi Formali</a></li>
       </ul>
-    </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Macchine a Stati Finiti (FSM)</h1>
   </header>
 
   <main>
@@ -34,66 +39,14 @@
 
     <img src="images/msf_diagram.jpeg" alt="Diagramma di una macchina a stati finiti" style="max-width:100%; margin: 20px 0;">
 
-    <h3> Componenti principali di una FSM</h3>
+    <h3>Componenti principali di una FSM</h3>
     <ul>
       <li><strong>Stati</strong>: le condizioni in cui il sistema può trovarsi (es. “Attivo”, “In attesa”, “Errore”)</li>
       <li><strong>Transizioni</strong>: i passaggi da uno stato all'altro, causati da eventi o input</li>
       <li><strong>Eventi/Input</strong>: i segnali o condizioni che provocano le transizioni</li>
       <li><strong>Stato iniziale</strong>: lo stato da cui parte il sistema</li>
-      <li><strong>Stati finali</strong> (facoltativi): stati terminali che rappresentano la conclusione del processo</li>
+      <li><strong>Stati finali</strong> (facoltativi): stati terminali che rappresentano la fine del processo</li>
     </ul>
-
-    <h3> Rappresentazioni della FSM</h3>
-    <p>Una FSM può essere rappresentata in vari modi:</p>
-    <table border="1" cellpadding="8" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Tipo</th>
-          <th>Descrizione</th>
-          <th>Utilizzo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Grafica</td>
-          <td>Diagramma con cerchi (stati) e frecce (transizioni)</td>
-          <td>Molto intuitiva e usata in fase di analisi e progettazione</td>
-        </tr>
-        <tr>
-          <td>Tabellare</td>
-          <td>Tabella con righe per stati e colonne per input</td>
-          <td>Utile per rappresentazioni compatte e implementazioni</td>
-        </tr>
-        <tr>
-          <td>Matematica</td>
-          <td>Rappresentazione formale con insiemi e funzioni</td>
-          <td>Usata per analisi formale e verifica di correttezza</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3> Applicazioni pratiche</h3>
-    <ul>
-      <li>Controllo di dispositivi elettronici e sensori</li>
-      <li>Protocolli di comunicazione (es. handshake TCP)</li>
-      <li>Modellazione di menù e interfacce grafiche</li>
-      <li>Sistemi embedded (microcontrollori, firmware)</li>
-      <li>Automazione di processi industriali</li>
-    </ul>
-
-    <h3> Esempio: produttore-consumatore con buffer condiviso</h3>
-    <p>Un classico esempio di applicazione delle FSM è la modellazione dell'interazione tra un <strong>produttore</strong> e un <strong>consumatore</strong> che accedono a un <strong>buffer condiviso</strong>. La macchina a stati descrive come i due processi si sincronizzano, evitano conflitti e garantiscono la corretta gestione della memoria condivisa.</p>
-
-    <h2>Conclusione</h2>
-    <p>Le FSM sono uno strumento <strong>rigoroso e potente</strong> per modellare il comportamento reattivo di un sistema. Offrono chiarezza, precisione e possibilità di verifica formale, permettendo di tradurre specifiche informali in strutture ben definite.</p>
-
-    <ul>
-      <li>Favoriscono la progettazione modulare</li>
-      <li>Supportano il testing e la validazione</li>
-      <li>Si integrano bene in ambienti formali e embedded</li>
-    </ul>
-
-    <p>Con una buona rappresentazione a stati, è possibile garantire che il sistema reagisca in modo corretto a ogni possibile evento. Le FSM sono un alleato fondamentale nell’ingegneria del software, specialmente quando il comportamento dipende fortemente dalla sequenza delle azioni.</p>
   </main>
 
   <footer>
