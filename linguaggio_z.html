@@ -25,22 +25,92 @@
       </ul>
     </nav>
   </header>
+
   <main>
-    <h2>Cos'è il Linguaggio Z?</h2>
-    <p>Il linguaggio Z è un linguaggio formale utilizzato per la specifica di sistemi software. Si basa sulla logica dei predicati del primo ordine e sulla teoria degli insiemi.</p>
+    <section>
+      <h2>Cos'è il Linguaggio Z?</h2>
+      <p>Il linguaggio Z, sviluppato all’Università di Oxford, è un formalismo per la specifica rigorosa dei sistemi software, basato sulla logica del primo ordine e la teoria degli insiemi. Utilizza schemi per descrivere aspetti statici e dinamici.</p>
+    </section>
 
-    <h2>Caratteristiche Principali</h2>
-    <ul>
-      <li>Utilizzo di schemi per descrivere stati e operazioni</li>
-      <li>Alta espressività e precisione</li>
-      <li>Supporto all'analisi formale e verifica</li>
-    </ul>
+    <section>
+      <h2>Costrutti di Base</h2>
+      <ul>
+        <li><strong>Insiemi e Funzioni:</strong> Utilizza concetti della teoria degli insiemi e logica.</li>
+        <li><strong>Stato:</strong> Variabili raggruppate in schemi di stato.</li>
+        <li><strong>Invarianti di Stato:</strong> Condizioni valide in ogni possibile stato.</li>
+      </ul>
+    </section>
 
-    <h2>Applicazioni</h2>
-    <p>Usato nella progettazione di sistemi critici, dove è richiesta elevata affidabilità, come in ambito aerospaziale o bancario.</p>
+    <section>
+      <h2>Esempio di Schema di Stato: Agenda</h2>
+      <pre>
+Agenda
+  conosciuto: ℙ NOME
+  compleanno: NOME ⇸ DATA
+―――――――――――――――――――――――
+  dom compleanno = conosciuto
+      </pre>
+      <p><strong>Invariante:</strong> Ogni nome in compleanno appartiene a conosciuto.</p>
+    </section>
 
-    <img src="images/linguaggio_z.jpg" alt="Esempio di specifica in Z">
+    <section>
+      <h2>Operazioni Principali</h2>
+      <h3>Inserimento di un compleanno</h3>
+      <pre>
+Aggiungi
+  ΔAgenda
+  nome?: NOME
+  data?: DATA
+―――――――――――――――――――――――
+  nome? ∉ conosciuto
+  conosciuto′ = conosciuto ∪ {nome?}
+  compleanno′ = compleanno ∪ {nome? ↦ data?}
+      </pre>
+
+      <h3>Ricerca di un compleanno</h3>
+      <pre>
+Ricerca
+  ΞAgenda
+  nome?: NOME
+  data!: DATA
+―――――――――――――――――――――――
+  nome? ∈ conosciuto
+  data! = compleanno nome?
+      </pre>
+
+      <h3>Promemoria per una data</h3>
+      <pre>
+Promemoria
+  ΞAgenda
+  data?: DATA
+  nomi!: ℙ NOME
+―――――――――――――――――――――――
+  nomi! = { n: NOME | compleanno n = data? }
+      </pre>
+    </section>
+
+    <section>
+      <h2>Casi Particolari e Composizione</h2>
+      <p>Per gestire casi particolari, si definisce un tipo di risultato:</p>
+      <pre>
+RISULTATO ::= ok | già_presente | non_presente
+      </pre>
+      <p>E si usano schemi ausiliari combinati tramite operatori come union e rinominazione.</p>
+      <pre>
+AggiungiRobusto = SpecPart ⨄ Aggiungi
+      </pre>
+    </section>
+
+    <section>
+      <h2>Perché usare il Linguaggio Z?</h2>
+      <ul>
+        <li><strong>Precisione:</strong> Definizione formale delle operazioni.</li>
+        <li><strong>Verificabilità:</strong> Strumenti automatici per controllo e validazione.</li>
+        <li><strong>Modularità:</strong> Schemi riutilizzabili e composizione semplificata.</li>
+      </ul>
+    </section>
   </main>
+
   <footer>
     <p>© 2025 The Veins 4CI</p>
   </footer>
