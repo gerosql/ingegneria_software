@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Ingegneria del Software</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { max-width: 800px; margin: auto; padding: 20px; }
+    .question { margin-bottom: 20px; }
+    .question h3 { margin-bottom: 10px; }
+    .result { font-weight: bold; margin-top: 10px; }
+    button { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="hamburger-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-button">☰</label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ciclo_vita.html">Ciclo di Vita</a></li>
+        <li><a href="specifica_requisiti.html">Specifica dei Requisiti</a></li>
+        <li><a href="dfd.html">DFD</a></li>
+        <li><a href="msf.html">MSF</a></li>
+        <li><a href="reti_petri.html">Reti di Petri</a></li>
+        <li><a href="stima_costi.html">Stima dei Costi</a></li>
+        <li><a href="linguaggi.html">Linguaggi</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <h1>Quiz Ingegneria del Software</h1>
+
+    
+    <div class="question" data-correct="b">
+      <h3>1. Qual è il primo passo nel ciclo di vita del software?</h3>
+      <label><input type="radio" name="q1" value="a"> Progettazione</label><br>
+      <label><input type="radio" name="q1" value="b"> Raccolta dei requisiti</label><br>
+      <label><input type="radio" name="q1" value="c"> Codifica</label>
+      <div class="result" id="r1"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>2. Che cosa rappresenta un DFD?</h3>
+      <label><input type="radio" name="q2" value="a"> Il flusso dei dati in un sistema</label><br>
+      <label><input type="radio" name="q2" value="b"> Il diagramma degli oggetti</label><br>
+      <label><input type="radio" name="q2" value="c"> Le classi del sistema</label>
+      <div class="result" id="r2"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>3. Il linguaggio Z è usato per?</h3>
+      <label><input type="radio" name="q3" value="a"> Programmare applicazioni web</label><br>
+      <label><input type="radio" name="q3" value="b"> Sviluppare videogiochi</label><br>
+      <label><input type="radio" name="q3" value="c"> Specificare formalmente un sistema</label>
+      <div class="result" id="r3"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>4. Cosa rappresentano i cerchi in un DFD?</h3>
+      <label><input type="radio" name="q4" value="a"> Memorie</label><br>
+      <label><input type="radio" name="q4" value="b"> Processi</label><br>
+      <label><input type="radio" name="q4" value="c"> Entità esterne</label>
+      <div class="result" id="r4"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>5. Cosa sono i requisiti funzionali?</h3>
+      <label><input type="radio" name="q5" value="a"> Vincoli di progetto</label><br>
+      <label><input type="radio" name="q5" value="b"> Azioni che il sistema deve compiere</label><br>
+      <label><input type="radio" name="q5" value="c"> Caratteristiche di qualità</label>
+      <div class="result" id="r5"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>6. Cosa valuta la validazione del software?</h3>
+      <label><input type="radio" name="q6" value="a"> Se il software è costruito correttamente</label><br>
+      <label><input type="radio" name="q6" value="b"> Se il software rispetta i requisiti</label><br>
+      <label><input type="radio" name="q6" value="c"> Se il software è ben documentato</label>
+      <div class="result" id="r6"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>7. Un'automazione rappresentabile con un MSF è?</h3>
+      <label><input type="radio" name="q7" value="a"> Una rete neurale</label><br>
+      <label><input type="radio" name="q7" value="b"> Un insieme di processi</label><br>
+      <label><input type="radio" name="q7" value="c"> Una macchina a stati finiti</label>
+      <div class="result" id="r7"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>8. Nel ciclo di vita a cascata, dopo la progettazione viene:</h3>
+      <label><input type="radio" name="q8" value="a"> Test</label><br>
+      <label><input type="radio" name="q8" value="b"> Codifica</label><br>
+      <label><input type="radio" name="q8" value="c"> Analisi dei requisiti</label>
+      <div class="result" id="r8"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>9. Il linguaggio TRIO si basa su quale concetto?</h3>
+      <label><input type="radio" name="q9" value="a"> Logica temporale</label><br>
+      <label><input type="radio" name="q9" value="b"> Diagrammi di stato</label><br>
+      <label><input type="radio" name="q9" value="c"> Blocchi funzionali</label>
+      <div class="result" id="r9"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>10. Quale tra questi è un linguaggio formale?</h3>
+      <label><input type="radio" name="q10" value="a"> Java</label><br>
+      <label><input type="radio" name="q10" value="b"> TRIO</label><br>
+      <label><input type="radio" name="q10" value="c"> Python</label>
+      <div class="result" id="r10"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>11. Cosa rappresenta una freccia in un diagramma DFD?</h3>
+      <label><input type="radio" name="q11" value="a"> Transizione di stato</label><br>
+      <label><input type="radio" name="q11" value="b"> Flusso di dati</label><br>
+      <label><input type="radio" name="q11" value="c"> Gerarchia di moduli</label>
+      <div class="result" id="r11"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>12. Quale tipo di costo si considera nella stima dei costi?</h3>
+      <label><input type="radio" name="q12" value="a"> Solo il costo del personale</label><br>
+      <label><input type="radio" name="q12" value="b"> Costi diretti e indiretti</label><br>
+      <label><input type="radio" name="q12" value="c"> Solo costi di licenza</label>
+      <div class="result" id="r12"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>13. Cosa rappresentano i rettangoli nei DFD?</h3>
+      <label><input type="radio" name="q13" value="a"> Entità esterne</label><br>
+      <label><input type="radio" name="q13" value="b"> Memorie</label><br>
+      <label><input type="radio" name="q13" value="c"> Processi</label>
+      <div class="result" id="r13"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>14. In un MSF, ogni stato è collegato da:</h3>
+      <label><input type="radio" name="q14" value="a"> Entità</label><br>
+      <label><input type="radio" name="q14" value="b"> Azioni</label><br>
+      <label><input type="radio" name="q14" value="c"> Transizioni</label>
+      <div class="result" id="r14"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>15. Cosa si intende per ‘verifica’ del software?</h3>
+      <label><input type="radio" name="q15" value="a"> Controllare se soddisfa i requisiti</label><br>
+      <label><input type="radio" name="q15" value="b"> Controllare che funzioni</label><br>
+      <label><input type="radio" name="q15" value="c"> Controllare se è costruito correttamente</label>
+      <div class="result" id="r15"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>16. Una rete di Petri può rappresentare:</h3>
+      <label><input type="radio" name="q16" value="a"> Strutture gerarchiche</label><br>
+      <label><input type="radio" name="q16" value="b"> Flussi concorrenti</label><br>
+      <label><input type="radio" name="q16" value="c"> Prototipi software</label>
+      <div class="result" id="r16"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>17. Il ciclo di vita iterativo permette:</h3>
+      <label><input type="radio" name="q17" value="a"> Un'unica fase di test</label><br>
+      <label><input type="radio" name="q17" value="b"> Modifiche continue al progetto</label><br>
+      <label><input type="radio" name="q17" value="c"> Solo sviluppo top-down</label>
+      <div class="result" id="r17"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>18. Un linguaggio formale serve a:</h3>
+      <label><input type="radio" name="q18" value="a"> Scrivere codice</label><br>
+      <label><input type="radio" name="q18" value="b"> Descrivere il comportamento di un sistema</label><br>
+      <label><input type="radio" name="q18" value="c"> Definire le classi</label>
+      <div class="result" id="r18"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>19. La stima dei costi include anche:</h3>
+      <label><input type="radio" name="q19" value="a"> Tempi di rilascio</label><br>
+      <label><input type="radio" name="q19" value="b"> Valutazione del personale</label><br>
+      <label><input type="radio" name="q19" value="c"> Costi post-produzione</label>
+      <div class="result" id="r19"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>20. Nel linguaggio Z i diagrammi servono a:</h3>
+      <label><input type="radio" name="q20" value="a"> Descrivere entità e operazioni</label><br>
+      <label><input type="radio" name="q20" value="b"> Generare codice</label><br>
+      <label><input type="radio" name="q20" value="c"> Definire test</label>
+      <div class="result" id="r20"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>21. TRIO è usato per:</h3>
+      <label><input type="radio" name="q21" value="a"> La gestione di database</label><br>
+      <label><input type="radio" name="q21" value="b"> La specifica temporale di sistemi</label><br>
+      <label><input type="radio" name="q21" value="c"> La scrittura di codice Java</label>
+      <div class="result" id="r21"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>22. I diagrammi MSF modellano:</h3>
+      <label><input type="radio" name="q22" value="a"> Struttura del database</label><br>
+      <label><input type="radio" name="q22" value="b"> Comportamento dinamico</label><br>
+      <label><input type="radio" name="q22" value="c"> Interfacce utente</label>
+      <div class="result" id="r22"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>23. Un requisito non funzionale riguarda:</h3>
+      <label><input type="radio" name="q23" value="a"> Prestazioni</label><br>
+      <label><input type="radio" name="q23" value="b"> Login utente</label><br>
+      <label><input type="radio" name="q23" value="c"> Input tastiera</label>
+      <div class="result" id="r23"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>24. La tecnica di stima COCOMO serve a:</h3>
+      <label><input type="radio" name="q24" value="a"> Calcolare il numero di utenti</label><br>
+      <label><input type="radio" name="q24" value="b"> Stimare costi e tempi</label><br>
+      <label><input type="radio" name="q24" value="c"> Verificare requisiti</label>
+      <div class="result" id="r24"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>25. Il ‘place’ in una rete di Petri rappresenta:</h3>
+      <label><input type="radio" name="q25" value="a"> Una condizione</label><br>
+      <label><input type="radio" name="q25" value="b"> Un’attività</label><br>
+      <label><input type="radio" name="q25" value="c"> Una transizione</label>
+      <div class="result" id="r25"></div>
+    </div>
+    
+    <div class="question" data-correct="a">
+      <h3>26. In una macchina a stati finiti, una transizione avviene quando:</h3>
+      <label><input type="radio" name="q26" value="a"> Si verifica un evento</label><br>
+      <label><input type="radio" name="q26" value="b"> Si clicca un bottone</label><br>
+      <label><input type="radio" name="q26" value="c"> Il software termina</label>
+      <div class="result" id="r26"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>27. Un DFD livello 0 è anche detto:</h3>
+      <label><input type="radio" name="q27" value="a"> Diagramma astratto</label><br>
+      <label><input type="radio" name="q27" value="b"> Diagramma contestuale</label><br>
+      <label><input type="radio" name="q27" value="c"> Diagramma globale</label>
+      <div class="result" id="r27"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>28. Un buon requisito deve essere:</h3>
+      <label><input type="radio" name="q28" value="a"> Vago</label><br>
+      <label><input type="radio" name="q28" value="b"> Generico</label><br>
+      <label><input type="radio" name="q28" value="c"> Misurabile</label>
+      <div class="result" id="r28"></div>
+    </div>
+    
+    <div class="question" data-correct="c">
+      <h3>29. Cosa si intende per milestone nel ciclo di vita?</h3>
+      <label><input type="radio" name="q29" value="a"> Un documento</label><br>
+      <label><input type="radio" name="q29" value="b"> Un'attività</label><br>
+      <label><input type="radio" name="q29" value="c"> Un punto di controllo importante</label>
+      <div class="result" id="r29"></div>
+    </div>
+    
+    <div class="question" data-correct="b">
+      <h3>30. Il testing si svolge:</h3>
+      <label><input type="radio" name="q30" value="a"> Solo all’inizio</label><br>
+      <label><input type="radio" name="q30" value="b"> Durante tutta la fase di sviluppo</label><br>
+      <label><input type="radio" name="q30" value="c"> Solo alla fine</label>
+      <div class="result" id="r30"></div>
+    </div>
+    
+
+    <button onclick="correggi()">Correggi Risposte</button>
+
+    <script>
+      function correggi() {
+        const questions = document.querySelectorAll('.question');
+        questions.forEach((q, i) => {
+          const correct = q.dataset.correct;
+          const selected = q.querySelector('input[type=radio]:checked');
+          const result = document.getElementById('r' + (i + 1));
+          if (!selected) {
+            result.textContent = "Nessuna risposta selezionata.";
+            result.style.color = "orange";
+          } else if (selected.value === correct) {
+            result.textContent = "Corretto!";
+            result.style.color = "green";
+          } else {
+            result.textContent = "Sbagliato.";
+            result.style.color = "red";
+          }
+        });
+      }
+    </script>
+  </main>
+</body>
+</html>
